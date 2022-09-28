@@ -1,0 +1,133 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Train AdamW",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--img",
+                "640",
+                "--batch",
+                "32",
+                "--epochs",
+                "100",
+                "--data",
+                "${workspaceFolder}/data/person_full/person.yaml",
+                "--hyp",
+                "${workspaceFolder}/custom/hyps/hyp.scratch-low._adamw.yaml",
+                "--optimizer",
+                "AdamW",
+                "--weights",
+                "yolov5s.pt",
+                "--cache"
+            ]
+        },
+        {
+            "name": "Train SGD",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--img",
+                "640",
+                "--batch",
+                "8",
+                "--epochs",
+                "100",
+                "--data",
+                "${workspaceFolder}/data/person_detection_data/person.yaml",
+                "--weights",
+                "yolov5l.pt",
+                "--cache"
+            ]
+        },
+        {
+            "name": "Validate",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/val.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--data",
+                "/home/zli/data/person_detection_data/person.yaml",
+                "--weights",
+                "runs/train/yolov5l/weights/best.pt",
+                "--batch-size",
+                "32",
+                "--imgsz",
+                "640",
+                "--device",
+                "0"
+            ]
+        },
+        {
+            "name": "Benchmark",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/utils/benchmarks.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--weights",
+                "${workspaceFolder}/runs/train/yolov5s_hospital/weights/best.pt",
+                "--img",
+                "640",
+                "--data",
+                "${workspaceFolder}/data/person_detection_data/person.yaml"
+            ]
+        },
+        {
+            "name": "Export",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/export.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--weights",
+                "${workspaceFolder}/runs/train/yolov5s_hospital/weights/best.pt",
+                "--imgsz",
+                "640",
+                "--include",
+                "onnx",
+                "--device",
+                "cpu",
+                "--dynamic"
+            ]
+        },
+        {
+            "name": "Detect",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/detect.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--weights",
+                "${workspaceFolder}/runs/train/yolov5s_hospital/weights/best.pt",
+                "--source",
+                "${workspaceFolder}/custom/data/VladB_Pedestrian_unsplash.bmp",
+                // "/home/zli/data/person_mix_full/images/val",
+                "--save-txt"
+            ]
+        },
+    ]
+}

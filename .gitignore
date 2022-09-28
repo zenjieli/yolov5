@@ -2,7 +2,7 @@
 *.jpg
 *.jpeg
 *.png
-*.bmp
+# *.bmp
 *.tif
 *.tiff
 *.heic
@@ -18,7 +18,6 @@
 *.MOV
 *.avi
 *.data
-*.json
 *.cfg
 !setup.cfg
 !cfg/yolov3*.cfg
