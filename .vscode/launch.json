@@ -67,7 +67,7 @@
             "justMyCode": true,
             "args": [
                 "--data",
-                "/home/zli/data/person_detection_data/person.yaml",
+                "${workspaceFolder}/data/person_detection_data/person.yaml",
                 "--weights",
                 "runs/train/yolov5s_videostudio/weights/best.pt",
                 "--batch-size",
@@ -122,8 +122,7 @@
                 "--weights",
                 "${workspaceFolder}/runs/train/yolov5s_videostudio/weights/best.pt",
                 "--source",
-                "/home/zli/Downloads/meva_imgs",
-                // "/home/zli/data/person_mix_full/images/val",
+                "~/Downloads/imgs",                
                 "--save-txt"
             ]
         },

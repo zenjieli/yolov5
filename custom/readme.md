@@ -1,6 +1,13 @@
 # Installation
 
-**Pytorch** versions for CUDA 10.x is needed for training. If using **Pytorch** built for CUDA 11.x, one will get `nan` values for box losses. It is not needed to change the current 11.x CUDA installation.
+## For Cuda 11.6
+
+```
+pip3 install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
+pip install -r requirements.txt
+```
+
+## For Cuda 10.2
 
 ```
 pip install torch==1.9.0+cu102 torchvision==0.10.0+cu102 -f https://download.pytorch.org/whl/torch_stable.html
