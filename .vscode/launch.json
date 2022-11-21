@@ -54,7 +54,7 @@
                 "--data",
                 "${workspaceFolder}/data/person_detection_data/person.yaml",
                 "--weights",
-                "yolov5l.pt",
+                "yolov5s.pt",
                 "--cache"
             ]
         },
@@ -122,7 +122,7 @@
                 "--weights",
                 "${workspaceFolder}/runs/train/yolov5s_videostudio/weights/best.pt",
                 "--source",
-                "~/Downloads/imgs",                
+                "~/Downloads/imgs",
                 "--save-txt"
             ]
         },
