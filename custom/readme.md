@@ -50,3 +50,5 @@ cd ~/data/person
 
 ~/workspace/github/Yolo_mark/yolo_mark images/train train.txt names.txt
 ```
+
+If there is only one object, the last two parameters *train.txt* and *names.txt* can be omitted.
