@@ -39,7 +39,13 @@ python detect.py --weights best.pt --source /data/person/images/train --save-txt
 
 # Data preparation
 
-## Annotation tool
+## Label format
+
+There is a `txt` file for each image, and each row in the `txt` file is an object. Each row is like
+
+```class x_centre y_center width height```
+
+The box coordinates are normalized to (0, 1).
 
 ## Annotation
 
